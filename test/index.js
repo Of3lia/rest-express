@@ -20,7 +20,7 @@ describe('express rest api server', () => {
             .end((e, res) => {
                 expect(e).to.eql(null)
                 expect(res.body.length).to.eql(1)
-                expect(res.body[0]._id.length.to.eql(24))
+                expect(res.body[0]._id.length).to.eql(24)
                 id = res.body[0]._id
                 done()
             })
@@ -66,7 +66,8 @@ describe('express rest api server', () => {
             .end((e, res) => {
                 expect(e).to.eql(null)
                 expect(typeof res.body).to.eql('object')
-                expect(res.body._id.length).to.eql(id)
+                expect(res.body._id.length).to.eql(24)
+                expect(res.body._id).to.eql(id)
                 expect(res.body.name).to.eql('Peter')
                 done()
             })
